@@ -6,9 +6,14 @@ var control = require('../control/recommendationControl')
 var app = express.Router()
 //Rutas 
 app.get('/recommend/user/:id', function (req,res) {
-    //Devuelve todos los libros
-    console.log('Iniciando recomendación...')
+    console.log('Iniciando recomendación basada en usuario...')
     control.recommendUser(req,res);      
+})
+
+app.get('/recommend/book/:id', function (req,res) {
+    //Devuelve todos los libros
+    console.log('Iniciando recomendación basada en libro...')
+    //control.recommendUser(req,res);      
 })
 
 module.exports = app
